@@ -8,6 +8,7 @@ import (
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
+	"github.com/joho/godotenv"
 )
 
 var (
@@ -23,6 +24,10 @@ var (
 func main() {
 	// discord, err := discordgo.New("Bot " + "authentication token")
 	// discord, err := discordgo.New(BotName + Token)
+	err := godotenv.Load(".env")
+	if err != nil (
+		fmt.Printf("failed loading: %!",err)
+	)
 	discord, err := discordgo.New()
 	discord.Token = Token
 	if err != nil {
